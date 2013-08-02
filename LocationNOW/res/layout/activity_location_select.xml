@@ -1,0 +1,147 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/titlebar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/mmtitle_bg"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/poi_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/mm_title_btn_normal"
+            android:maxHeight="80.0dip"
+            android:minHeight="41.0dip"
+            android:minWidth="50.0dip"
+            android:onClick="onScanButtonClick"
+            android:text=" POI "
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/BasicTextSize" />
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/LocationTitle"
+                style="@style/TitleBarText"
+                android:layout_gravity="center"
+                android:text="当前位置" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/mm_title_btn_normal"
+            android:maxHeight="80.0dip"
+            android:minHeight="41.0dip"
+            android:minWidth="50.0dip"
+            android:text=" 定位 "
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/BasicTextSize" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal" >
+
+            <com.baidu.mapapi.MapView
+                android:id="@+id/bmapsView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:clickable="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/LocationNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/location_tips"
+                android:minWidth="80dip"
+                android:text=""
+                android:textColor="@android:color/white" />
+
+            <FrameLayout
+                android:id="@+id/LocLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/location_tips"
+                android:visibility="gone" >
+
+                <ProgressBar
+                    android:id="@+id/LoadingLocation"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:minWidth="80dip" />
+            </FrameLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="9dip"
+                android:src="@drawable/location_arrows" >
+            </ImageView>
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/im"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:src="@drawable/wb_item_lbs_big" />
+
+        <TextView
+            android:id="@+id/Tv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dip"
+            android:paddingLeft="5.0dip"
+            android:paddingTop="10dip"
+            android:text=""
+            android:textSize="19.0dip" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:scrollingCache="false" >
+    </ListView>
+
+</LinearLayout>
